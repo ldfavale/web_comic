@@ -12,7 +12,6 @@ const App = () => {
   const tableRef = useRef(null);
 
   useEffect(() => {
-    enterFullscreen();
   });
 
   const enterFullscreen = () => {
