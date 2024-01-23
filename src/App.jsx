@@ -1,6 +1,10 @@
 import React, { useRef } from 'react';
-import frame from './assets/frame_2.png'; // with import
-import scene from './assets/scene2.png'; // with import
+import frame from './assets/frame.png'; // with import
+import frame_top from './assets/frame_top_2.png'; // with import
+import left_frame from './assets/left_frame.png'; // with import
+import right_frame from './assets/right_frame.png'; // with import
+import frame_bottom from './assets/frame_bottom.png'; // with import
+import scene from './assets/scene_1.png'; // with import
 import { useEffect } from 'react';
 
 const data = [
@@ -44,9 +48,44 @@ const App = () => {
   };
 
   return (
-    <div ref={tableRef} className="flex items-center justify-center bg-gray-200">
-      <div ref={tableRef} className="relative bg-gray-200 flex items-center justify-center">
-        <img src={frame} alt="" className='w-80 z-10 '/>
+    <div ref={tableRef} className="flex items-center justify-center bg-indigo-500 h-screen">
+      <div  id='frame' className="flex items-center justify-center w-full h-screen max-h-[720px] max-w-[350px] min-w-[350px]">
+
+
+
+      <div className="grid grid-cols-11 grid-rows-[repeat(40,minmax(0,1fr))] gap-0 w-full h-full relative">
+    <div className="col-span-11 row-span-12 row-start-1 col-start-1"><img src={frame_top} alt="" className='w-full absolute -top-1'/></div>
+    <div className="row-[span_18/span_18] row-start-13  flex justify-start">
+      <img src={right_frame} alt="" className='w-[92%]'/>
+      {/* <img src={left_frame} alt="" className='w-[91.16%]'/> */}
+    </div>
+    <div className="col-span-11 row-span-10 col-start-1 row-start-[31] "><img src={frame_bottom} alt="" className='w-full '/></div>
+    <div className="row-[span_18/span_18] col-start-11 row-start-13  flex justify-end ">
+      <img src={right_frame} alt="" className='w-[92%]'/>
+    </div>
+    {/* <div className="col-span-9 row-span-16 col-start-2 row-start-13 bg-slate-400"><img src={scene} alt="" className='w-full'/></div> */}
+    <div className="col-span-9 row-[span_20/span_20] col-start-2 row-start-2 "><img src={scene} alt="" className='w-full'/></div>
+</div>
+
+      {/* <div className="grid grid-cols-11 grid-rows-40 gap-0 w-full h-full">
+        <div className="col-span-11 row-span-12 row-start-1 col-start-1  "><img src={frame_top} alt="" className='w-full'/></div>
+        <div className="row-span-16 row-start-13 bg-green-400">4</div>
+        <div className="col-span-9 row-span-16 col-start-2 row-start-4 bg-slate-400"><img src={scene} alt="" className='w-full'/></div>
+        <div className=" col-start-11 row-span-16 row-start-13 bg-lime-400">12</div>
+        <div className="col-span-11 row-span-12 col-start-1 row-start-29 bg-amber-400">7</div>
+      </div> */}
+
+      {/* <div class="frame_container">
+        <div class="frame_top"></div>
+        <div class="frame_bottom"></div>
+        <div class="frame_left "></div>
+        <div class="frame_right "></div>
+        <div class="scene">
+          <img src={scene} alt="" className='w-full'/>
+
+        </div>
+      </div> */}
+        {/* <img src={frame} alt="" className='w-80 z-10 '/>
         <img src={scene} alt="" className='w-56 absolute top-20  z-1  before:w-4 before:h-4 before:rounded-full before:bg-slate-700 before:block before:absolute before:top-[-2px] before:left-[-30px]'/>
         <p className='absolute  bottom-[95px] left-12  z-1 text-gray-700 text-xs w-56  h-12 flex items-center justify-center'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis aperiam eaque, odio quas corporis optio voluptatum porro.
@@ -61,7 +100,7 @@ const App = () => {
         <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 8 14">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1"/>
         </svg>
-       </button>
+       </button> */}
       </div>
         <button className='absolute bottom-1 right-1' onClick={handleFullscreen}>
         <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
